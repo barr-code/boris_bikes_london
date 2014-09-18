@@ -18,5 +18,6 @@ class Person
 
 	def return_bike_to(station)
 		station.dock(:bike)
+		@bike = nil
 	end
 end

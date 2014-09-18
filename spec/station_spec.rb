@@ -9,8 +9,15 @@ describe Station do
 	end
 
 	it "should release a bike" do
+		bike = double :bike
 		station = Station.new
+		station.dock(bike)
 		station.release_bike
 	end
 
-end
+	it "should not release a bike if empty" do
+		station = Station.new
+		expect(lambda {station.release_bike}).to raise_error(RuntimeError)
+	end
+
+end 
