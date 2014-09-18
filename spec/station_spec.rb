@@ -26,5 +26,4 @@ describe Station do
 		5.times {station.dock(bike)}
 		expect(lambda {station.dock(bike)}).to raise_error(RuntimeError)
 	end
-
 end 
