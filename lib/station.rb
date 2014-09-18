@@ -1,10 +1,12 @@
 class Station
 	
-	def initialize
+	def initialize(capacity=10)
 		@bikes = []
+		@capacity = capacity
 	end
 
 	def dock(bike)
+		raise 'This station is full. No room for bikes.' if full?
 		@bikes << bike
 	end
 
@@ -15,6 +17,10 @@ class Station
 
 	def empty?
 		@bikes.count == 0
+	end
+
+	def full?
+		@bikes.count == @capacity
 	end
 
 end
