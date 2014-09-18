@@ -15,4 +15,8 @@ class Person
 	def crash(bike)
 		bike.break!
 	end
+
+	def return_bike_to(station)
+		station.dock(:bike)
+	end
 end

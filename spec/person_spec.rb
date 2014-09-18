@@ -25,4 +25,10 @@ describe Person do
 		person.crash(bike)
 	end
 
+	it "should return a bike to the station" do
+		station = double :station
+		person = Person.new
+		expect(station).to receive(:dock)
+		person.return_bike_to(station)
+	end
 end
